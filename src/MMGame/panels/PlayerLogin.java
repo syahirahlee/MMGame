@@ -30,11 +30,11 @@ public class PlayerLogin extends JPanel {
         this.setBackground(bg_darkblue);
 
         //title 
-        JLabel actionLabel = new JLabel("PLAYER LOGIN");
-        actionLabel.setFont(new Font("Cooper Black", Font.BOLD, 35));
-        actionLabel.setForeground(Color.white);
-        actionLabel.setHorizontalAlignment(JLabel.CENTER);
-        this.add(actionLabel);
+        JLabel login = new JLabel("PLAYER LOGIN");
+        login.setFont(new Font("Cooper Black", Font.BOLD, 35));
+        login.setForeground(Color.white);
+        login.setHorizontalAlignment(JLabel.CENTER);
+        this.add(login);
 
         //username 
         JLabel usernamelabel = new JLabel("Username");

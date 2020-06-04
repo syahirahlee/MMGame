@@ -13,9 +13,13 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 
 /**
- *
- * view : all forms / interfaces in the game
- * @author HP
+ * Math Mania Game (MMG) VIEW component
+ * 
+ * View: renders MMG model's content. 
+ * holds and updates all forms / interfaces in the game.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
+ * 
  */
 public class MMG_View extends JPanel {
     
@@ -36,9 +40,9 @@ public class MMG_View extends JPanel {
     
     public MMG_View()
     {
-        // Grid Layout
+        //set Grid Layout
         this.setLayout(new GridLayout());
-        
+        //set form size
         this.setSize(750,800);
         //set forms
         this.login = new PlayerLogin();
@@ -61,11 +65,11 @@ public class MMG_View extends JPanel {
         form.add(this.rules);
         form.add(this.levels);
         form.add(this.lev1);
-        //form.add(this.lev2);
-        //form.add(this.lev3);
+        form.add(this.lev2);
+        form.add(this.lev3);
         form.add(this.endgame);
         
-         // identify forms
+         //put form identification
         layout.addLayoutComponent(this.login, "login");
         layout.addLayoutComponent(this.register, "register");
         
@@ -76,9 +80,9 @@ public class MMG_View extends JPanel {
         
         layout.addLayoutComponent(this.levels, "levels");
         layout.addLayoutComponent(this.lev1, "level1");
-        /*layout.addLayoutComponent(this.lev2, "level2");
+        layout.addLayoutComponent(this.lev2, "level2");
         layout.addLayoutComponent(this.lev3, "level3");
-        */
+        
         layout.addLayoutComponent(this.endgame, "endgame");
         
 

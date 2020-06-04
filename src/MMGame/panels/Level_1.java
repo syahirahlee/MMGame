@@ -35,46 +35,51 @@ public class Level_1 extends JPanel {
     public Level_1()
     {
         Border border = BorderFactory.createLineBorder(Color.BLACK);
-        // Banner
-        JPanel content = new JPanel();
-        content.setLayout(new BoxLayout(content, BoxLayout.LINE_AXIS));
-        content.setPreferredSize(new Dimension(1000, 115));
-        content.setBackground(bg_darkblue);
-        content.setAlignmentX(CENTER_ALIGNMENT);
+        this.setBackground(bg_darkblue);
+        this.setLayout(new BorderLayout());
         
-        // Dynamic Banner Content
+         //top layout
+        JPanel top = new JPanel();
+        top.setLayout(new BoxLayout(top, BoxLayout.LINE_AXIS));
+        top.setPreferredSize(new Dimension(1000, 115));
+        top.setBackground(bg_darkblue);
+        top.setAlignmentX(CENTER_ALIGNMENT);
+        
         JPanel p1 = new JPanel();
         p1.setBackground(bg_darkblue);
         p1.setPreferredSize(new Dimension(200, 100));
         p1.setLayout(new GridLayout(0,1));
-            
-        roundlabel = new JLabel();
-        roundlabel.setFont(new Font("Cooper Black", Font.BOLD, 24));
-        roundlabel.setForeground(Color.WHITE);
-        roundlabel.setVerticalAlignment(JLabel.TOP);
-        roundlabel.setHorizontalAlignment(JLabel.RIGHT);
-        p1.add(roundlabel);
-            
-        //question label
-        questionlabel = new JLabel();
-        questionlabel.setFont(new Font("Segoe Print", Font.BOLD, 24));
-        questionlabel.setForeground(Color.WHITE);
-        p1.add(questionlabel);
         
-        content.add(p1);
-        this.add(content, BorderLayout.NORTH); 
+        
+        roundlabel = new JLabel("1");
+        roundlabel.setFont(new Font("Segoe Print", Font.BOLD, 25));
+        roundlabel.setForeground(Color.white);
+        roundlabel.setVerticalAlignment(JLabel.TOP);
+        roundlabel.setHorizontalAlignment(JLabel.CENTER);
+        p1.add(roundlabel);
+
+       questionlabel = new JLabel();
+       questionlabel.setFont(new Font("Segoe Print", Font.BOLD, 25));
+       questionlabel.setForeground(Color.WHITE);
+       questionlabel.setVerticalAlignment(JLabel.TOP);
+       questionlabel.setHorizontalAlignment(JLabel.CENTER);
+       p1.add(questionlabel);
+       
+       top.add(p1);
+            
+       this.add(top, BorderLayout.NORTH);
+       // content.add(Box.createRigidArea(new Dimension(15,0)));
         
         // Main Content
         JPanel main = new JPanel();
-        main.setLayout(new GridLayout(0,2));
+        main.setLayout(new GridLayout(0,1));
 
        //player answer space
        JPanel p2 = new JPanel();
        p2.setBackground(bg_darkblue);
        p2.setLayout(null);
-       p2.setLayout(new GridLayout(2,0));
-       p2.setLocation(100, 50);
-       p2.setSize(300, 120);
+       p2.setLayout(new GridLayout(0,1));
+       p2.setSize(100, 50);
         
         //label enter answer
         JLabel instruction = new JLabel("Enter your answer as a number: ");
@@ -87,19 +92,17 @@ public class Level_1 extends JPanel {
         ansTxtField.setBackground(bg_darkblue);
         ansTxtField.setForeground(Color.white);
         ansTxtField.setHorizontalAlignment(JLabel.CENTER);
-        ansTxtField.setFont(new Font("Segoe Print", Font.BOLD, 20));
+        ansTxtField.setFont(new Font("Segoe Print", Font.BOLD, 25));
         p2.add(ansTxtField);
         
         main.add(p2, BorderLayout.CENTER);
         
+        //button panels
+        JPanel p4 = new JPanel();
+        p4.setBackground(bg_darkblue);
+        p4.setBackground(bg_darkblue);
 
-       p2 = new JPanel();
-       p2.setBackground(bg_darkblue);
-       p2.setLayout(new GridLayout(2,0));
-       p2.setLocation(100, 50);
-       p2.setSize(300, 120);
-        
-        //enter button
+        //enter Button
         enterbtn = new JButton("Enter");
         enterbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
         enterbtn.setForeground(Color.white);
@@ -107,12 +110,15 @@ public class Level_1 extends JPanel {
         enterbtn.setFocusPainted(false);
         enterbtn.setContentAreaFilled(false);
         enterbtn.setOpaque(true);
-        enterbtn.setBackground(yellow);   
+        enterbtn.setBackground(yellow);
         enterbtn.setBorder(border);
-        p2.add(enterbtn);
+        enterbtn.setPreferredSize(new Dimension (200, 70));
+        p4.add(enterbtn);
         
-        //quit button
-        quitbtn = new JButton("Quit");
+        main.add(p4);
+        
+        //quit Button
+        quitbtn = new JButton("Quit Game");
         quitbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
         quitbtn.setForeground(Color.white);
         quitbtn.setBorderPainted(false);
@@ -121,14 +127,13 @@ public class Level_1 extends JPanel {
         quitbtn.setOpaque(true);
         quitbtn.setBackground(yellow);
         quitbtn.setBorder(border);
-        p2.add(quitbtn);
+        quitbtn.setPreferredSize(new Dimension (200, 70));
+        p4.add(quitbtn);
         
-        main.add(p2, BorderLayout.CENTER);
+        main.add(p4, BorderLayout.CENTER);
         
-            
+        
         this.add(main);
-            
-            
     }
     
     //generate math question for easy level
@@ -188,5 +193,14 @@ public class Level_1 extends JPanel {
     public JLabel getRounds()
     {
         return roundlabel;
+    }
+    public void clear()
+    {
+        ansTxtField.setText("");
+    }
+    
+    public JLabel getQuestion()
+    {
+        return questionlabel;
     }
 }

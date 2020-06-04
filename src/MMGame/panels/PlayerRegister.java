@@ -25,15 +25,15 @@ public class PlayerRegister extends JPanel{
     
     public PlayerRegister()
     {
-        this.setLayout(new GridLayout(7, 0));
+        this.setLayout(new GridLayout(0, 1));
         this.setBackground(bg_darkblue);
 
         //title 
-        JLabel actionLabel = new JLabel("PLAYER REGISTER");
-        actionLabel.setFont(new Font("Cooper Black", Font.BOLD, 35));
-        actionLabel.setForeground(Color.white);
-        actionLabel.setHorizontalAlignment(JLabel.CENTER);
-        this.add(actionLabel);
+        JLabel title = new JLabel("PLAYER REGISTER");
+        title.setFont(new Font("Cooper Black", Font.BOLD, 35));
+        title.setForeground(Color.white);
+        title.setHorizontalAlignment(JLabel.CENTER);
+        this.add(title);
 
          //Email label
         JLabel emaillabel = new JLabel("Email");
@@ -85,7 +85,7 @@ public class PlayerRegister extends JPanel{
 
         
         // register Button
-        registerButton = new JButton("Login");
+        registerButton = new JButton("Register");
         registerButton.setFont(new Font("Cooper Black", Font.BOLD, 22));
         registerButton.setForeground(Color.white);
         registerButton.setBorderPainted(false);
@@ -96,7 +96,7 @@ public class PlayerRegister extends JPanel{
         this.add(registerButton);
 
         // Sign Up Button
-        backButton = new JButton("No account? Register here");
+        backButton = new JButton("Back");
         backButton.setFont(new Font("Cooper Black", Font.BOLD, 22));
         backButton.setForeground(Color.white);
         backButton.setBorderPainted(false);

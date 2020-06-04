@@ -8,18 +8,26 @@ package MMGame;
 import MMGame.model.Player;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author HP
+ * Math Mania Game (MMG) CONTROLLER component
+ * 
+ * Controller: translate player interaction with MMG view into actions that 
+ * MMG model performs.
+ * holds all functions and actions performed by button clicks from the forms.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
+ * 
  */
 public class MMG_Controller extends JFrame  {
     
-    // Local Model-View Link Variables
+    // Model-View Link Variables
     private final MMG_Model model;
     private final MMG_View view;
 
@@ -54,7 +62,7 @@ public class MMG_Controller extends JFrame  {
             }
         });
         
-         /*for register form
+         //for register form
         this.view.getRegister().getRegButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,19 +73,11 @@ public class MMG_Controller extends JFrame  {
         this.view.getRegister().getBackBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                view.getRegister().Clear();
                 view.getLayout().show(view.getForms(), "login");
             }
         });
-        //clear button
-        this.view.getRegister().getClearbtn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getRegister().Clear();
-            }
-        });
-        */
         
-         
         //for main menu form
         //1.levels
         this.view.getMainMenu().getPlaybtn().addActionListener(new ActionListener() {
@@ -92,6 +92,7 @@ public class MMG_Controller extends JFrame  {
         this.view.getMainMenu().getRankBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                view.getRanking().getTableModel().setRowCount(0);
                 DisplayRank();
                 //DisplayRank(model.getLatestScore());
                 view.getLayout().show(view.getForms(), "ranking");
@@ -122,26 +123,31 @@ public class MMG_Controller extends JFrame  {
         });
         
         
-       
-        //for levels menu form
+        //for levels menu form 
         this.view.getLevels().getEasybtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                view.getlev1().getRounds();
+                //display questions
+                view.getlev1().EasyQuestion();
                 view.getLayout().show(view.getForms(), "level1");
             }
         });
         this.view.getLevels().getIntermediatebtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                view.getlev2().getRounds();
+                //display questions
+                view.getlev2().Intermediate();
                 view.getLayout().show(view.getForms(), "level2");
             }
         });
         this.view.getLevels().getAdvancedbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                view.getlev3().getRounds();
+                //display questions
+                view.getlev3().Advanced();
                 view.getLayout().show(view.getForms(), "level3");
             }
         });
@@ -185,6 +191,7 @@ public class MMG_Controller extends JFrame  {
         this.view.getlev1().Quitbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                view.getlev1().clear();
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -192,6 +199,66 @@ public class MMG_Controller extends JFrame  {
             }
         });
          
+        //level 2 game actions
+        this.view.getlev2().getEnterbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //call method check player input and answer
+                Level2_Game();
+            }
+        });
+        this.view.getlev2().Quitbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getlev2().clear();
+                //save player score
+                model.getgameDB().updateScore(model.getPlayer());
+                //open main menu
+                view.getLayout().show(view.getForms(), "main menu");
+            }
+        });
+        
+        //level 3 game actions
+        this.view.getlev3().getEnterbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //call method check player input and answer
+                Level3_Game();
+            }
+        });
+        this.view.getlev3().Quitbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getlev3().clear();
+                //save player score
+                model.getgameDB().updateScore(model.getPlayer());
+                //open main menu
+                view.getLayout().show(view.getForms(), "main menu");
+            }
+        });
+        //end game form actions
+        view.getEndgame().getOKbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                //open main menu
+                view.getLayout().show(view.getForms(), "main menu");
+            }
+        });
+        
+        //closing game window
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Object[] options = {"Exit Game", "Cancel"};
+                int result = JOptionPane.showOptionDialog(getParent(), "Are you sure you want to exit?\nActive games will not be saved.", "Exit?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+                if (result == JOptionPane.YES_OPTION) {
+                    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                } else {
+                    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
     }     
  
     public static void main(String[] args) {
@@ -336,7 +403,7 @@ public class MMG_Controller extends JFrame  {
          if (rounds >= 10) {
              //save player's total score
             model.getgameDB().updateScore(model.getPlayer());
-            System.err.println(model.getPlayer().getScore());
+            System.err.println("Score:" + model.getPlayer().getScore());
             //open end game form to display final score
             //display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
@@ -349,6 +416,131 @@ public class MMG_Controller extends JFrame  {
         }
         
      }
+     
+     //check answer for Level2 game
+     private void Level2_Game()
+     {
+       boolean validInput = true;
+       //get player answer
+      String ans = this.view.getlev2().getplayerAnswer().getText().trim(); 
+       if (validInput)
+       {
+          try
+          {
+              playerans = Double.parseDouble(ans); //convert to double
+              validInput = true;
+              //check player answer
+                if (Math.abs(Double.parseDouble(ans) - this.view.getlev2().getCorrectAnswer())  <= 0.01) //for correct answer 
+                {
+                    //add 10 points
+                    this.model.getPlayer().setScore(score +=10);
+                    //save player's total score
+                    model.getgameDB().updateScore(model.getPlayer());
+                    JOptionPane.showMessageDialog(null, "You got it right!"); //mesage to inform player
+                }
+                else //wrong answer
+                {
+                    //subtract 10 points
+                    model.getPlayer().setScore(score-=10);
+                    //save player's total score
+                    model.getgameDB().updateScore(model.getPlayer());
+                    JOptionPane.showMessageDialog(null, "You got it wrong!"); //mesage to inform player
+                }
+     
+          } catch (NumberFormatException e){ //other input other than integers
+                    JOptionPane.showMessageDialog(null, "Please enter number only");
+                    validInput = false;
+          }
+      }
+       view.getlev2().getplayerAnswer().selectAll();
+       view.getlev2().getplayerAnswer().requestFocusInWindow();
+
+       //increment round (10 rounds) and display at what number of round the game has reached
+        rounds++;
+        view.getlev2().getRounds().setText("" + String.valueOf(rounds + 1) );
+        //clear textfield for next question
+        view.getlev2().getplayerAnswer().setText("");
+        
+        //when 10 questions finish loaded, game ends
+         if (rounds >= 10) {
+             //save player's total score
+            model.getgameDB().updateScore(model.getPlayer());
+            System.err.println("Score:" + model.getPlayer().getScore());
+            //open end game form to display final score
+            //display final score
+            view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
+            view.getLayout().show(view.getForms(), "endgame");
+        
+        } else 
+        {
+             //load next question
+            view.getlev2().Intermediate();
+        }
+        
+     }
+     
+     //check answer for Level2 game
+     private void Level3_Game()
+     {
+       boolean validInput = true;
+       //get player answer
+       String ans = this.view.getlev3().getplayerAnswer().getText().trim(); 
+       if (validInput)
+       {
+          try
+          {
+              playerans = Double.parseDouble(ans); //convert to double
+              validInput = true;
+              //check player answer
+                if (Math.abs(Double.parseDouble(ans) - this.view.getlev3().getCorrectAnswer())  <= 0.01) //for correct answer 
+                {
+                    //add 20 points
+                    this.model.getPlayer().setScore(score +=20);
+                    //save player's total score
+                    model.getgameDB().updateScore(model.getPlayer());
+                    JOptionPane.showMessageDialog(null, "You got it right!"); //mesage to inform player
+                }
+                else //wrong answer
+                {
+                    //subtract 20 points
+                    model.getPlayer().setScore(score-=20);
+                    //save player's total score
+                    model.getgameDB().updateScore(model.getPlayer());
+                    JOptionPane.showMessageDialog(null, "You got it wrong!"); //mesage to inform player
+                }
+     
+          } catch (NumberFormatException e){ //other input other than integers
+                    JOptionPane.showMessageDialog(null, "Please enter number only");
+                    validInput = false;
+          }
+      }
+       view.getlev3().getplayerAnswer().selectAll();
+       view.getlev3().getplayerAnswer().requestFocusInWindow();
+
+       //increment round (10 rounds) and display at what number of round the game has reached
+        rounds++;
+        view.getlev3().getRounds().setText("" + String.valueOf(rounds + 1) );
+        //clear textfield for next question
+        view.getlev3().getplayerAnswer().setText("");
+        
+        //when 10 questions finish loaded, game ends
+         if (rounds >= 10) {
+             //save player's total score
+            model.getgameDB().updateScore(model.getPlayer());
+            System.err.println("Score:" + model.getPlayer().getScore());
+            //open end game form to display final score
+            //display final score
+            view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
+            view.getLayout().show(view.getForms(), "endgame");
+        
+        } else 
+        {
+             //load next question
+            view.getlev3().Advanced();
+        }
+        
+     }
+     
      
      
 }

@@ -12,10 +12,13 @@ import java.util.ArrayList;
 
 import javax.swing.Timer;
 /**
- *
- * model: player and database data
+ * Math Mania Game (MMG) MODEL component
  * 
- * @author HP
+ * Model: represents MMG player and database data & rules that governs 
+ * access to and updates the data
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
+ * 
  */
 public class MMG_Model {
     
@@ -105,33 +108,7 @@ public class MMG_Model {
     }
     */
     
-    /*check login credentials
-    public void checkPlayerLogin (String pname, String pw)
-    {
-        this.username = pname;
-        this.password = pw;
-        
-        if (username != null && password != null) {
-
-            if (gameDB.checkLogin(username, password)) {
-                // Set Player
-                this.player = gameDB.loadPlayer(username, password);
-                //username = player.getUsername();
-                
-                if (player != null) {
-                    info.loginflag = true;
-                    
-
-                } else {
-                    info.loginflag = false;
-                }
-        
-        } 
-            setChanged();
-            notifyObservers(info);
-        }
-    }
-    */
+  
     
     
 }
