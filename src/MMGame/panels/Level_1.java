@@ -100,7 +100,6 @@ public class Level_1 extends JPanel {
         //button panels
         JPanel p4 = new JPanel();
         p4.setBackground(bg_darkblue);
-        p4.setBackground(bg_darkblue);
 
         //enter Button
         enterbtn = new JButton("Enter");

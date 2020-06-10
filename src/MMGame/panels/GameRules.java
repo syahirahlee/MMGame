@@ -63,6 +63,7 @@ public class GameRules extends JPanel{
             backBtn.setContentAreaFilled(false);
             backBtn.setOpaque(true);
             backBtn.setBackground(yellow);
+            backBtn.setPreferredSize(new Dimension (800, 80));
             p1.add(backBtn, BorderLayout.SOUTH);
 
         //this.add(new WelcomeImage(500, 550));

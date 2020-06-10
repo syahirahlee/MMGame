@@ -28,6 +28,7 @@ public class GameLevels extends JPanel{
         
         this.setLayout(new GridLayout(0, 1));
         this.setBackground(bg_darkblue);
+        this.setLayout(new BorderLayout());
         
         //top layout
         JPanel top = new JPanel();
@@ -70,10 +71,6 @@ public class GameLevels extends JPanel{
         
         JPanel p2 = new JPanel();
         p2.setBackground(bg_darkblue);
-        p2.setSize(new Dimension(200,120));
-        p2.setBackground(bg_darkblue);
-        p2.setLayout(new GridLayout(0,1));
-        p2.setBorder(border);
         
         easybtn = new JButton("Level 1 : Easy");
         easybtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -84,15 +81,12 @@ public class GameLevels extends JPanel{
         easybtn.setOpaque(true);
         easybtn.setBackground(yellow);
         easybtn.setBorder(border);
+        easybtn.setPreferredSize(new Dimension (400, 80));
         p2.add(easybtn);
         main.add(p2);
         
         JPanel p3 = new JPanel();
         p3.setBackground(bg_darkblue);
-        p3.setSize(new Dimension(200,120));
-        p3.setBackground(bg_darkblue);
-        p3.setLayout(new GridLayout(0,1));
-        p3.setBorder(border);
         
         intermediatebtn = new JButton("Level 2 : Intermediate");
         intermediatebtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -103,16 +97,13 @@ public class GameLevels extends JPanel{
         intermediatebtn.setOpaque(true);
         intermediatebtn.setBackground(yellow);
         intermediatebtn.setBorder(border);
+        intermediatebtn.setPreferredSize(new Dimension (400, 80));
         p3.add(intermediatebtn);
         main.add(p3);
         
         
         JPanel p4 = new JPanel();
         p4.setBackground(bg_darkblue);
-        p4.setSize(new Dimension(200,120));
-        p4.setBackground(bg_darkblue);
-        p4.setLayout(new GridLayout(0,1));
-        p4.setBorder(border);
         
         advancedbtn = new JButton("Level 3 : Advanced");
         advancedbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -123,15 +114,12 @@ public class GameLevels extends JPanel{
         advancedbtn.setOpaque(true);
         advancedbtn.setBackground(yellow);
         advancedbtn.setBorder(border);
+        advancedbtn.setPreferredSize(new Dimension (400, 80));
         p4.add(advancedbtn);
         main.add(p4);
         
         JPanel p5 = new JPanel();
         p5.setBackground(bg_darkblue);
-        p5.setSize(new Dimension(200,120));
-        p5.setBackground(bg_darkblue);
-        p5.setLayout(new GridLayout(0,1));
-        p5.setBorder(border);
         
         backbtn= new JButton("Return to Main Menu");
         backbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -140,8 +128,9 @@ public class GameLevels extends JPanel{
         backbtn.setFocusPainted(false);
         backbtn.setContentAreaFilled(false);
         backbtn.setOpaque(true);
-        backbtn.setBackground(bg_darkblue);
-        backbtn.setHorizontalAlignment(JButton.RIGHT);;
+        backbtn.setBackground(yellow);
+        //backbtn.setHorizontalAlignment(JButton.RIGHT);
+        backbtn.setPreferredSize(new Dimension (400, 80));
         p5.add(backbtn);
         main.add(p5);
         

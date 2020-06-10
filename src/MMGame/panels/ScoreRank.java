@@ -71,9 +71,7 @@ public class ScoreRank extends JPanel {
        
        JPanel p5 = new JPanel();
         p5.setBackground(bg_darkblue);
-        p5.setSize(new Dimension(200,120));
-        p5.setBackground(bg_darkblue);
-        p5.setLayout(new GridLayout(0,1));
+        p5.setLayout(new BorderLayout());
       
         
         backbtn= new JButton("Return to Main Menu");
@@ -83,9 +81,9 @@ public class ScoreRank extends JPanel {
         backbtn.setFocusPainted(false);
         backbtn.setContentAreaFilled(false);
         backbtn.setOpaque(true);
-        backbtn.setBackground(bg_darkblue);
-        backbtn.setHorizontalAlignment(JButton.RIGHT);;
-        p5.add(backbtn);
+        backbtn.setBackground(yellow);
+        backbtn.setPreferredSize(new Dimension (800, 80));
+        p5.add(backbtn,BorderLayout.SOUTH);
        
        this.add(p5, BorderLayout.SOUTH);
     }

@@ -68,17 +68,13 @@ public class MainMenu extends JPanel{
         JPanel main = new JPanel();
        // main.setLayout(new GridLayout(0,1, 2, 5));
         main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
-        main.setPreferredSize(new Dimension(500, 115));
+        main.setPreferredSize(new Dimension(400, 115));
         main.setBackground(bg_darkblue);
         main.setAlignmentX(CENTER_ALIGNMENT);
         
         JPanel p2 = new JPanel();
         p2.setBackground(bg_darkblue);
-        p2.setSize(new Dimension(200,120));
-        p2.setBackground(bg_darkblue);
-        p2.setLayout(new GridLayout(0,1));
-        p2.setBorder(border);
-       
+      
         //play Button
         playbtn = new JButton("Play Game");
         playbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -89,6 +85,7 @@ public class MainMenu extends JPanel{
         playbtn.setOpaque(true);
         playbtn.setBackground(yellow);
         playbtn.setBorder(border);
+        playbtn.setPreferredSize(new Dimension (300, 80));
         p2.add(playbtn);
         
         main.add(p2);
@@ -96,10 +93,7 @@ public class MainMenu extends JPanel{
         
         JPanel p3 = new JPanel();
         p3.setBackground(bg_darkblue);
-        p3.setSize(new Dimension(200,120));
-        p3.setBackground(bg_darkblue);
-        p3.setLayout(new GridLayout(0,1));
-        p3.setBorder(border);
+       
         //ranking Button
         rankbtn = new JButton("Ranking");
         rankbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -110,18 +104,15 @@ public class MainMenu extends JPanel{
         rankbtn.setOpaque(true);
         rankbtn.setBackground(yellow);
         rankbtn.setBorder(border);
+        rankbtn.setPreferredSize(new Dimension (300, 80));
         p3.add(rankbtn);
         
         main.add(p3);
         
         
-        
         JPanel p4 = new JPanel();
         p4.setBackground(bg_darkblue);
-        p4.setSize(new Dimension(200,120));
-        p4.setBackground(bg_darkblue);
-        p4.setLayout(new GridLayout(0,1));
-        p4.setBorder(border);
+      
         //rules Button
         rulesbtn = new JButton("Show Rules");
         rulesbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -132,6 +123,7 @@ public class MainMenu extends JPanel{
         rulesbtn.setOpaque(true);
         rulesbtn.setBackground(yellow);
         rulesbtn.setBorder(border);
+        rulesbtn.setPreferredSize(new Dimension (300, 80));
         p4.add(rulesbtn);
         
         main.add(p4);
@@ -140,10 +132,7 @@ public class MainMenu extends JPanel{
         
         JPanel p5 = new JPanel();
         p5.setBackground(bg_darkblue);
-        p5.setSize(new Dimension(200,120));
-        p5.setBackground(bg_darkblue);
-        p5.setLayout(new GridLayout(0,1));
-        p5.setBorder(border);
+        
         //sign out Button
         signoutbtn = new JButton("Sign Out");
         signoutbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
@@ -154,6 +143,7 @@ public class MainMenu extends JPanel{
         signoutbtn.setOpaque(true);
         signoutbtn.setBackground(yellow);
         signoutbtn.setBorder(border);
+        signoutbtn.setPreferredSize(new Dimension (300, 80));
         p5.add(signoutbtn);
         
         main.add(p5);
