@@ -39,6 +39,7 @@ public class MainMenu extends JPanel{
         top.setBackground(bg_darkblue);
         top.setAlignmentX(CENTER_ALIGNMENT);
         
+       
         JPanel p1 = new JPanel();
         p1.setBackground(bg_darkblue);
         p1.setPreferredSize(new Dimension(200, 100));

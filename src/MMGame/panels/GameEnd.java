@@ -20,58 +20,94 @@ import javax.swing.border.Border;
  */
 public class GameEnd extends JPanel {
     
-    private JButton okbtn;
+    
     private JLabel scorelabel;
+    private JButton mainmenu;
+    private JButton playbtn;
     
     public GameEnd()
     {
         this.setBackground(bg_darkblue);
-        this.setLayout(new GridLayout(0, 1));
+        this.setLayout(new BorderLayout());
         Border border = BorderFactory.createLineBorder(Color.BLACK);
-         
+        
+        //top layout
+        JPanel top = new JPanel();
+        top.setLayout(new BoxLayout(top, BoxLayout.LINE_AXIS));
+        top.setPreferredSize(new Dimension(1000, 115));
+        top.setBackground(bg_darkblue);
+        top.setAlignmentX(CENTER_ALIGNMENT);
+        
         JPanel score = new JPanel();
-        score.setSize(300, 120);
+        score.setPreferredSize(new Dimension(200, 100));
+        score.setLayout(new GridLayout(0,1));
         score.setBackground(bg_darkblue);
          
         JLabel congrats = new JLabel("Thank you for playing! You score is");
-        setFont(new Font("Cooper Black", Font.BOLD, 40));
+        setFont(new Font("Cooper Black", Font.BOLD, 80));
         congrats.setForeground(Color.white);
         congrats.setHorizontalAlignment(JLabel.CENTER);
         score.add(congrats);
         
         scorelabel = new JLabel();
-        scorelabel.setFont(new Font("Segoe Print", Font.BOLD, 50));
+        scorelabel.setFont(new Font("Segoe Print", Font.BOLD, 40));
         scorelabel.setForeground(Color.white);
         scorelabel.setHorizontalAlignment(JLabel.CENTER);
         score.add(scorelabel);
         
-        this.add(score, BorderLayout.CENTER);
+        top.add (score);
         
+        this.add(top, BorderLayout.NORTH);
+        
+        // Main Content
+        JPanel main = new JPanel();
+        main.setLayout(new GridLayout(0,1));
+        
+        //buttons panel
         JPanel button = new JPanel();
-        button.setSize(300, 120);
         button.setBackground(bg_darkblue);
-         
-        okbtn = new JButton("OK");
-        okbtn.setFont(new Font("Cooper Black", Font.BOLD, 30));
-        okbtn.setPreferredSize(new Dimension (100, 50));;
-        okbtn.setForeground(Color.white);
-        okbtn.setBorderPainted(false);
-        okbtn.setFocusPainted(false);
-        okbtn.setContentAreaFilled(false);
-        okbtn.setOpaque(true);
-        okbtn.setBackground(yellow);
-        okbtn.setBorder(border);
-        okbtn.setHorizontalAlignment(JButton.CENTER);
-        button.add(okbtn);
         
-        this.add(button, BorderLayout.SOUTH);
+        playbtn = new JButton("More challenges");
+        playbtn.setFont(new Font("Cooper Black", Font.BOLD, 22));
+        playbtn.setForeground(Color.white);
+        playbtn.setBorderPainted(false);
+        playbtn.setFocusPainted(false);
+        playbtn.setContentAreaFilled(false);
+        playbtn.setOpaque(true);
+        playbtn.setBackground(yellow);
+        playbtn.setBorder(border);
+        playbtn.setPreferredSize(new Dimension (250, 70));
+        button.add(playbtn);
         
+        main.add(button);
+        
+        mainmenu = new JButton("Main Menu");
+        mainmenu.setFont(new Font("Cooper Black", Font.BOLD, 22));
+        mainmenu.setForeground(Color.white);
+        mainmenu.setBorderPainted(false);
+        mainmenu.setFocusPainted(false);
+        mainmenu.setContentAreaFilled(false);
+        mainmenu.setOpaque(true);
+        mainmenu.setBackground(yellow);
+        mainmenu.setBorder(border);
+        mainmenu.setPreferredSize(new Dimension (250, 70));
+        button.add(mainmenu);
+        
+        main.add(button);
+     
+        this.add (main, BorderLayout.CENTER);
     }
-    
-    public JButton getOKbtn()
+   
+   public JButton getmenubtn()
    {
-       return okbtn;
+       return mainmenu;
    }
+   
+   public JButton getplaybtn()
+   {
+       return playbtn;
+   }
+   
    public JLabel getFinalScore()
    {
        return scorelabel;

@@ -43,7 +43,7 @@ public class MMG_View extends JPanel {
         //set Grid Layout
         this.setLayout(new GridLayout());
         //set form size
-        this.setSize(750,800);
+        this.setSize(750,900);
         //set forms
         this.login = new PlayerLogin();
         this.register = new PlayerRegister();

@@ -114,10 +114,10 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear all fields
                 view.getLogin().clear();
+                model.setPlayer(null);
+                
                 //display login form
                 view.getLayout().show(view.getForms(), "login");
-                    model.setPlayer(null);
-                    //model.setTimer(null);
             }
         });
         
@@ -213,7 +213,9 @@ public class MMG_Controller extends JFrame  {
         this.view.getlev2().Quitbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //clear textfield and round
                 view.getlev2().clear();
+                view.getlev2().getRounds().setText("");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -232,23 +234,32 @@ public class MMG_Controller extends JFrame  {
         this.view.getlev3().Quitbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //clear textfield and round
                 view.getlev3().clear();
+                view.getlev3().getRounds().setText("");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
                 view.getLayout().show(view.getForms(), "main menu");
             }
         });
+        
         //end game form actions
-        view.getEndgame().getOKbtn().addActionListener(new ActionListener() {
+        view.getEndgame().getmenubtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
                 //open main menu
                 view.getLayout().show(view.getForms(), "main menu");
             }
         });
-        
+         view.getEndgame().getplaybtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //open levels form
+                view.getLayout().show(view.getForms(), "levels");
+            }
+        });
+         
         //closing game window
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -408,7 +419,6 @@ public class MMG_Controller extends JFrame  {
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
             //open end game form to display final score
-            //display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");
         
@@ -470,7 +480,6 @@ public class MMG_Controller extends JFrame  {
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
             //open end game form to display final score
-            //display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");
         
@@ -479,7 +488,6 @@ public class MMG_Controller extends JFrame  {
              //load next question
             view.getlev2().Intermediate();
         }
-        
      }
      
      //check answer for Level2 game
@@ -532,7 +540,6 @@ public class MMG_Controller extends JFrame  {
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
             //open end game form to display final score
-            //display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");
         
@@ -541,9 +548,5 @@ public class MMG_Controller extends JFrame  {
              //load next question
             view.getlev3().Advanced();
         }
-        
      }
-     
-     
-     
 }
