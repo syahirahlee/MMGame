@@ -25,11 +25,11 @@ public class GameRules extends JPanel{
         this.showrules = "<html>The game consists of questions revolving 4 basic math operations.<br>"
                 + "Operations: Addition (+), Subtraction(-), Multiplication (*) and Division (/).<br>"
                 + "For division answers, round off to 2 decimal places.<br><br>"
-                + "There are 3 levels to choose, each with respective operations and time limit.<br>"
-                + "->Level 1: (+) and (-) operation. Time limit:15 secs<br>"
-                + "->Level 2: All 4 operation. Time limit:10 secs <br>"
-                + "->Level 3: (*) and (/) operation. Time limit:10 secs <br><br>"
-                + "There are 10 rounds each game level.<br><br>"
+                + "There are 3 levels to choose, each with respective operations.<br>"
+                + "->Level 1: (+) and (-) operation. <br>"
+                + "->Level 2: All 4 operation.<br>"
+                + "->Level 3: (*) and (/) operation.<br><br>"
+                + "There are 10 rounds in each game level.<br><br>"
                 + "Playing the game again will overwrite your existing score<br><br>"
                 + "Goodluck & Enjoy the game!</html>";
 

@@ -108,7 +108,6 @@ public class MMG_Controller extends JFrame  {
             }
         });
         
-        
          //4.sign out
         this.view.getMainMenu().getSignOutBtn().addActionListener(new ActionListener() {
             @Override
@@ -127,7 +126,8 @@ public class MMG_Controller extends JFrame  {
         this.view.getLevels().getEasybtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getlev1().getRounds();
+                //initiate round 
+                view.getlev1().getRounds().setText("1");
                 //display questions
                 view.getlev1().EasyQuestion();
                 view.getLayout().show(view.getForms(), "level1");
@@ -191,7 +191,10 @@ public class MMG_Controller extends JFrame  {
         this.view.getlev1().Quitbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //clear textfield and round
                 view.getlev1().clear();
+                view.getlev1().getRounds().setText("");
+                
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
