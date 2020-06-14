@@ -38,7 +38,7 @@ Please read the game rules before playing, thank you.
 </p>
 
 
-**3. Main menu*
+**3. Main menu**
 
 <p align="center">
   <img width="350" height="375" src="https://user-images.githubusercontent.com/62451840/84591950-7802d380-ae96-11ea-902f-a4a2f3879ee6.png">
