@@ -114,6 +114,7 @@ public class PlayerRegister extends JPanel{
     public void Clear() {
         usernameTxt.setText("");
         passwordTxt.setText("");
+        emailTxt.setText("");
     }
 
    

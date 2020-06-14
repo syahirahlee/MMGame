@@ -29,7 +29,7 @@ public class ScoreRank extends JPanel {
         
         //title 
         JLabel title = new JLabel("RANKING");
-        title.setFont(new Font("Cooper Black", Font.BOLD, 25));
+        title.setFont(new Font("Cooper Black", Font.BOLD, 28));
         title.setForeground(Color.white);
         title.setHorizontalAlignment(JLabel.CENTER);
         this.add(title);
@@ -47,6 +47,7 @@ public class ScoreRank extends JPanel {
         Dimension dim = new Dimension(20,1);
         rankTable.setIntercellSpacing(new Dimension(dim));
         SetRowHeight(rankTable);
+        
         rankTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         rankTable.getTableHeader().setFont(new Font(this.getFont().getFontName(), Font.PLAIN, this.getFont().getSize()));
         rankTable.getTableHeader().setBackground(yellow);

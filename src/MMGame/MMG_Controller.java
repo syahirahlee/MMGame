@@ -57,6 +57,7 @@ public class MMG_Controller extends JFrame  {
         this.view.getLogin().getRegisterBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                view.getLogin().clear();
                 //call login method to check player account
                 view.getLayout().show(view.getForms(), "register");;
             }
@@ -127,7 +128,7 @@ public class MMG_Controller extends JFrame  {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //initiate round 
-                view.getlev1().getRounds().setText("1");
+                view.getlev1().getRounds();
                 //display questions
                 view.getlev1().EasyQuestion();
                 view.getLayout().show(view.getForms(), "level1");
@@ -193,8 +194,6 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev1().clear();
-                view.getlev1().getRounds().setText("");
-                
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -215,7 +214,6 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev2().clear();
-                view.getlev2().getRounds().setText("");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -236,7 +234,6 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev3().clear();
-                view.getlev3().getRounds().setText("");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -490,7 +487,7 @@ public class MMG_Controller extends JFrame  {
         }
      }
      
-     //check answer for Level2 game
+     //check answer for Level3 game
      private void Level3_Game()
      {
        boolean validInput = true;

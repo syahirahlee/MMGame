@@ -21,7 +21,7 @@ public class GameRules extends JPanel{
     
     public GameRules()
     {
-        //write rules description
+       //write rules description
         this.showrules = "<html>The game consists of questions revolving 4 basic math operations.<br>"
                 + "Operations: Addition (+), Subtraction(-), Multiplication (*) and Division (/).<br>"
                 + "For division answers, round off to 2 decimal places.<br><br>"
@@ -30,7 +30,9 @@ public class GameRules extends JPanel{
                 + "->Level 2: All 4 operation.<br>"
                 + "->Level 3: (*) and (/) operation.<br><br>"
                 + "There are 10 rounds in each game level.<br><br>"
-                + "Playing the game again will overwrite your existing score<br><br>"
+                + "Player can resume the game level they quit while still logged in<br>"
+                + "Completing the 10 rounds of game will finalise your score ranking<br><br>"
+                + "Note: Playing the game again will overwrite your existing score<br><br>"
                 + "Goodluck & Enjoy the game!</html>";
 
         this.setLayout(new GridLayout(1, 0));
@@ -42,7 +44,7 @@ public class GameRules extends JPanel{
         p1.setBackground(bg_darkblue);
 
             JLabel titleLabel = new JLabel("GAME RULES");
-            titleLabel.setFont(new Font("Cooper Black", Font.PLAIN, 25));
+            titleLabel.setFont(new Font("Cooper Black", Font.PLAIN, 28));
             titleLabel.setForeground(Color.white);
             titleLabel.setHorizontalAlignment(JLabel.CENTER);
             p1.add(titleLabel, BorderLayout.NORTH);

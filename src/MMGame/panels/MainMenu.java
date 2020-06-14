@@ -34,27 +34,34 @@ public class MainMenu extends JPanel{
 
         //top layout
         JPanel top = new JPanel();
-        top.setLayout(new BoxLayout(top, BoxLayout.LINE_AXIS));
-        top.setPreferredSize(new Dimension(1000, 115));
+        top.setLayout(new BoxLayout(top, BoxLayout.Y_AXIS));
+        top.setPreferredSize(new Dimension(900, 220));
         top.setBackground(bg_darkblue);
         top.setAlignmentX(CENTER_ALIGNMENT);
         
-       
+        
+        MMG_logo image = new MMG_logo(250,150);
+        image.setBackground(bg_darkblue);
+        image.setPreferredSize(new Dimension(250, 150));
+        image.setMaximumSize(new Dimension(250, 150));
+   
+        top.add(image);
+
+        
         JPanel p1 = new JPanel();
         p1.setBackground(bg_darkblue);
-        p1.setPreferredSize(new Dimension(200, 100));
-        p1.setLayout(new GridLayout(0,1));
-        
+        p1.setPreferredSize(new Dimension(200, 20));
+        p1.setLayout(new GridLayout(0, 1));
         
         welcomelabel = new JLabel("WELCOME");
-        welcomelabel.setFont(new Font("Cooper Black", Font.BOLD, 25));
+        welcomelabel.setFont(new Font("Cooper Black", Font.BOLD, 20));
         welcomelabel.setForeground(Color.white);
         welcomelabel.setVerticalAlignment(JLabel.TOP);
         welcomelabel.setHorizontalAlignment(JLabel.CENTER);
         p1.add(welcomelabel);
 
        usernamelabel = new JLabel("Player");
-       usernamelabel.setFont(new Font("Cooper Black", Font.PLAIN, 25));
+       usernamelabel.setFont(new Font("Cooper Black", Font.PLAIN, 18));
        usernamelabel.setForeground(Color.WHITE);
        usernamelabel.setVerticalAlignment(JLabel.TOP);
        usernamelabel.setHorizontalAlignment(JLabel.CENTER);
@@ -67,7 +74,6 @@ public class MainMenu extends JPanel{
 
        //main layout
         JPanel main = new JPanel();
-       // main.setLayout(new GridLayout(0,1, 2, 5));
         main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
         main.setPreferredSize(new Dimension(400, 115));
         main.setBackground(bg_darkblue);
