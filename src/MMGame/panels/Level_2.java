@@ -11,8 +11,10 @@ import java.util.Random;
 import javax.swing.*;
 import javax.swing.border.Border;
 /**
- *
- * @author HP
+ * Displays Level 2 (Intermediate) questions.
+ * Includes all 4 operations : Additional, Subtraction, Multiplication, Division.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class Level_2 extends JPanel {
     

@@ -11,8 +11,9 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.Border;
 /**
- *
- * @author HP
+ * Displays the main menu form of game.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class MainMenu extends JPanel{
     

@@ -15,8 +15,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 /**
- *
- * @author HP
+ *  Displays game end interface when player completes the game in each level.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class GameEnd extends JPanel {
     
@@ -33,18 +34,25 @@ public class GameEnd extends JPanel {
         
         //top layout
         JPanel top = new JPanel();
-        top.setLayout(new BoxLayout(top, BoxLayout.LINE_AXIS));
-        top.setPreferredSize(new Dimension(1000, 115));
+        top.setLayout(new BoxLayout(top, BoxLayout.Y_AXIS));
+        top.setPreferredSize(new Dimension(1000, 400));
         top.setBackground(bg_darkblue);
         top.setAlignmentX(CENTER_ALIGNMENT);
         
+        MMG_logo image = new MMG_logo(250,150);
+        image.setBackground(bg_darkblue);
+        image.setPreferredSize(new Dimension(250, 150));
+        image.setMaximumSize(new Dimension(250, 150));
+        
+        top.add(image);
+        
         JPanel score = new JPanel();
-        score.setPreferredSize(new Dimension(200, 100));
+        score.setPreferredSize(new Dimension(600, 10));
         score.setLayout(new GridLayout(0,1));
         score.setBackground(bg_darkblue);
          
         JLabel congrats = new JLabel("Thank you for playing! You score is");
-        setFont(new Font("Cooper Black", Font.BOLD, 80));
+        congrats.setFont(new Font("Segoe Print", Font.BOLD, 25));
         congrats.setForeground(Color.white);
         congrats.setHorizontalAlignment(JLabel.CENTER);
         score.add(congrats);
@@ -62,6 +70,7 @@ public class GameEnd extends JPanel {
         // Main Content
         JPanel main = new JPanel();
         main.setLayout(new GridLayout(0,1));
+        main.setPreferredSize(new Dimension(700, 200));
         
         //buttons panel
         JPanel button = new JPanel();
@@ -76,7 +85,7 @@ public class GameEnd extends JPanel {
         playbtn.setOpaque(true);
         playbtn.setBackground(yellow);
         playbtn.setBorder(border);
-        playbtn.setPreferredSize(new Dimension (250, 70));
+        playbtn.setPreferredSize(new Dimension (230, 70));
         button.add(playbtn);
         
         main.add(button);
@@ -90,7 +99,7 @@ public class GameEnd extends JPanel {
         mainmenu.setOpaque(true);
         mainmenu.setBackground(yellow);
         mainmenu.setBorder(border);
-        mainmenu.setPreferredSize(new Dimension (250, 70));
+        mainmenu.setPreferredSize(new Dimension (230, 70));
         button.add(mainmenu);
         
         main.add(button);

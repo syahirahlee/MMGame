@@ -6,7 +6,8 @@
 package MMGame.model;
 
 /**
- *
+ * Holds the player's data/attributes.
+ * 
  * @author Syahirah Shafiq Lee (19065338)
  */
 public class Player {

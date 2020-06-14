@@ -13,8 +13,9 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author HP
+ * Displays all the players ranking in game.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class ScoreRank extends JPanel {
     

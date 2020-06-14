@@ -11,8 +11,9 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 /**
- *
- * @author HP
+ * Displays game rules and information.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class GameRules extends JPanel{
 
@@ -25,10 +26,13 @@ public class GameRules extends JPanel{
         this.showrules = "<html>The game consists of questions revolving 4 basic math operations.<br>"
                 + "Operations: Addition (+), Subtraction(-), Multiplication (*) and Division (/).<br>"
                 + "For division answers, round off to 2 decimal places.<br><br>"
-                + "There are 3 levels to choose, each with respective operations.<br>"
-                + "->Level 1: (+) and (-) operation. <br>"
-                + "->Level 2: All 4 operation.<br>"
-                + "->Level 3: (*) and (/) operation.<br><br>"
+                + "There are 3 levels to choose, each with respective operations and score points.<br>"
+                + "->Level 1: Addition and Subtraction operation. <br>"
+                + " 5 points<br>"
+                + "->Level 2: All 4 operations.<br>"
+                + " 10 points<br>"
+                + "->Level 3: Multiplication and Division operation.<br>"
+                + " 20 points<br>"
                 + "There are 10 rounds in each game level.<br><br>"
                 + "Player can resume the game level they quit while still logged in<br>"
                 + "Completing the 10 rounds of game will finalise your score ranking<br><br>"

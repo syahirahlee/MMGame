@@ -11,8 +11,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- *
- * @author HP
+ * Displays player register form for new users that have no account in the game.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class PlayerRegister extends JPanel{
     

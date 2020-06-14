@@ -10,8 +10,9 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- *
- * @author HP
+ * Displays player login form to sign into existing account.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class PlayerLogin extends JPanel {
     

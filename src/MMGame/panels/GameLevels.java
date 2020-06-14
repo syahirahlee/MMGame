@@ -11,8 +11,12 @@ import java.awt.*;
 import javax.swing.border.Border;
 
 /**
- *
- * @author HP
+ * Displays the three game levels available:
+ * Level 1: Easy
+ * Level 2: Intermediate
+ * Level 3: Advanced
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class GameLevels extends JPanel{
     

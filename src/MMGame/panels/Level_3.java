@@ -12,8 +12,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 /**
- *
- * @author HP
+ * Displays Level 3 (Advanced) questions.
+ * Includes only multiplication and division operations.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class Level_3 extends JPanel {
     

@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
- * for math mania game logo design 
+ * Set Math Mania Game logo design.
  * 
  * @author Syahirah Shafiq Lee (19065338)
  */

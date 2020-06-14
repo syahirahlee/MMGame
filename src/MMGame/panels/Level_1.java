@@ -12,8 +12,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 /**
- *
- * @author HP
+ * Displays Level 1 (Easy) questions.
+ * Includes only additional and subtraction operations.
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public class Level_1 extends JPanel {
     
