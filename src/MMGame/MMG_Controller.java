@@ -19,8 +19,9 @@ import javax.swing.table.DefaultTableModel;
  * Math Mania Game (MMG) CONTROLLER component
  * 
  * Controller: translate player interaction with MMG view into actions that 
- * MMG model performs.
+ * MMG model performs and runs the game.
  * holds all functions and actions performed by button clicks from the forms.
+ * 
  * 
  * @author Syahirah Shafiq Lee (19065338)
  * 
@@ -116,7 +117,7 @@ public class MMG_Controller extends JFrame  {
                 //clear all fields
                 view.getLogin().clear();
                 model.setPlayer(null);
-                
+                rounds = 0;
                 //display login form
                 view.getLayout().show(view.getForms(), "login");
             }
@@ -124,6 +125,7 @@ public class MMG_Controller extends JFrame  {
         
         
         //for levels menu form 
+        //level1
         this.view.getLevels().getEasybtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -134,6 +136,7 @@ public class MMG_Controller extends JFrame  {
                 view.getLayout().show(view.getForms(), "level1");
             }
         });
+        //level2
         this.view.getLevels().getIntermediatebtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -143,6 +146,7 @@ public class MMG_Controller extends JFrame  {
                 view.getLayout().show(view.getForms(), "level2");
             }
         });
+        //level3
         this.view.getLevels().getAdvancedbtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -160,7 +164,6 @@ public class MMG_Controller extends JFrame  {
             }
         });
         
-     
         //for ranking form
          this.view.getRanking().getBackbtn().addActionListener(new ActionListener() {
             @Override
@@ -194,6 +197,8 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev1().clear();
+                rounds = 0;
+                view.getlev1().getRounds().setText("1");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -214,6 +219,8 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev2().clear();
+                rounds = 0;
+                view.getlev2().getRounds().setText("1");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -234,6 +241,8 @@ public class MMG_Controller extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 //clear textfield and round
                 view.getlev3().clear();
+                rounds = 0;
+                view.getlev3().getRounds().setText("1");
                 //save player score
                 model.getgameDB().updateScore(model.getPlayer());
                 //open main menu
@@ -415,6 +424,9 @@ public class MMG_Controller extends JFrame  {
              //save player's total score
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
+            //restart round
+            rounds=0;
+            view.getlev1().getRounds().setText("");
             //open end game form to display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");
@@ -476,6 +488,9 @@ public class MMG_Controller extends JFrame  {
              //save player's total score
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
+            //restart round
+            rounds=0;
+            view.getlev2().getRounds().setText("");
             //open end game form to display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");
@@ -536,6 +551,9 @@ public class MMG_Controller extends JFrame  {
              //save player's total score
             model.getgameDB().updateScore(model.getPlayer());
             System.err.println("Score:" + model.getPlayer().getScore());
+            //restart round
+            rounds=0;
+            view.getlev3().getRounds().setText("");
             //open end game form to display final score
             view.getEndgame().getFinalScore().setText("" + model.getPlayer().getScore());
             view.getLayout().show(view.getForms(), "endgame");

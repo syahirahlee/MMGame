@@ -10,7 +10,6 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-import javax.swing.Timer;
 /**
  * Math Mania Game (MMG) MODEL component
  * 
@@ -32,12 +31,10 @@ public class MMG_Model {
     private final Database gameDB;
     private ArrayList latestScore;
     private Player player;
-    private Timer timer;
     
     private String username=null;
     private String password=null;
-    
-    //UpdateInfo info;
+
     
     public MMG_Model()
     {
@@ -92,23 +89,5 @@ public class MMG_Model {
     private void setLatestScore() {
         this.latestScore = getgameDB().getRanking();
     }
-    
-     /**
-     * @return the timer
-     
-    public Timer getTimer() {
-        return timer;
-    }
 
-    /**
-     * @param timer the timer to set
-     
-    public void setTimer(Timer timer) {
-        this.timer = timer;
-    }
-    */
-    
-  
-    
-    
 }

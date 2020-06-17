@@ -34,9 +34,8 @@ public class GameRules extends JPanel{
                 + "->Level 3: Multiplication and Division operation.<br>"
                 + " 20 points<br>"
                 + "There are 10 rounds in each game level.<br><br>"
-                + "Player can resume the game level they quit while still logged in<br>"
                 + "Completing the 10 rounds of game will finalise your score ranking<br><br>"
-                + "Note: Playing the game again will overwrite your existing score<br><br>"
+                + "Note: Playing the game again will restart levels and overwrite your existing score<br><br>"
                 + "Goodluck & Enjoy the game!</html>";
 
         this.setLayout(new GridLayout(1, 0));

@@ -21,20 +21,21 @@ import javax.swing.JOptionPane;
 
 import MMGame.model.Player;
 /**
- *
- * @author HP
+ * Holds database component of game.
+ * Records all the game data (players).
+ * 
+ * @author Syahirah Shafiq Lee (19065338)
  */
 public final class Database {
     
     //database variables
     private Connection conn=null;
-    private final String url = "jdbc:derby:MMGdb;create=true";  //url of the DB host
-    private final String dbUsername = "syahirahlee";  //DB username
-    private final String dbPassword = "tata23";   //DB password
+    private final String url = "jdbc:derby:MMGdb;create=true";  //embedded database host
+    private final String dbUsername = "syahirahlee";  //database username
+    private final String dbPassword = "tata23";   //database password
     private Statement statement=null;
   
-    
-    //Constructs a Database
+    //Constructs agame database
     protected Database() {
         
         if (!connect()) {
@@ -90,7 +91,7 @@ public final class Database {
     
     /**
      * Checks if table exists in database or not
-     * @param tableName the table to check for
+     * @param newtableName the table to check for
      * @return true if table exists, else false
      */
     protected boolean checkTableExisting(String newtableName) {
@@ -231,8 +232,4 @@ public final class Database {
         return players;
     }
     
-     
-    
-
- 
 }
