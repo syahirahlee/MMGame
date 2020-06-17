@@ -40,7 +40,7 @@ This form is displayed when 'register' button in 'Login' form is clicked. New us
 
 
 **3. Main menu**  <br/>
-This form is displayed when player successfully login into the game. <br/>
+This form is displayed when player successfully login into the game. Player's username will be displayed below the game logo.<br/>
 - Play Game button
   - This will open 'Levels' menu.
 - Ranking button
@@ -63,23 +63,29 @@ This form is displayed when 'Play Game' button is clicked in the 'Main Menu' for
   - This will open Level2 form where intermediate questions are generated for 10 rounds.
 - Level 3: Advanced button
   - This will open Level3 form where advanced questions are generated for 10 rounds. <br/>
-  Refer to game rules for details regarding the different challenges in the three levels.
 - Return to Main Menu button
-  - This will open 'Main Menu' form back. <br/>
-  Refer to game rules for details regarding the different challenges in the three levels.
+  - This will open 'Main Menu' form back. <br/><br/>
+Refer to game rules for details regarding the different challenges in the three levels.
   
  <p align="center">
   <img width="350" height="375" src="https://user-images.githubusercontent.com/62451840/84887062-58afb480-b0e9-11ea-8413-49026f2cd7c6.png">
 </p>
 
- Example of level's question form:
+ Example of level's question form:<br/>
+ Player needs to fill in the answer in the textfield provided.
+- Enter button
+  - This will check player answer and display message to inform whether the answer is correct or wrong. Appropriate message is displayed if user enter other input than integers or blank field. Next question will be generated.
+- Quit Game button
+  - This will open 'Main Menu' form.
+ 
 <p align="center">
-  <img width="350" height="375" src="https://user-images.githubusercontent.com/62451840/84592043-bb5d4200-ae96-11ea-8e6d-35fc39de8e6a.png">
+  <img width="350" height="375" src="https://user-images.githubusercontent.com/62451840/84592043-bb5d4200-ae96-11ea-8e6d-35fc39de8e6a.png"><br/><br/>
+  <img width="650" height="91" src="https://user-images.githubusercontent.com/62451840/84889196-9530df80-b0ec-11ea-844d-c88743c0d1db.png">
 </p>
 
     
 **5. Ranking**   <br/>
-This form is displayed when 'Ranking' button is clicked in the 'Main Menu' form. <br/>
+This form is displayed when 'Ranking' button is clicked in the 'Main Menu' form. The score tab can be clicked to manipulate whether the table displays score ranking in descending or ascending order.<br/>
 - Return to Main Menu button
   - This will open 'Main Menu' form back.
 
@@ -101,7 +107,7 @@ This form is displayed when 'Show Rules' button is clicked in the 'Main Menu' fo
 **7. End Game**<br/>
 This form is displayed when player has finished 10 rounds of the game in each level. <br/>
 - More challenges button
-  - This will open 'Levels' form for player to try playing other levels.
+  - This will open 'Levels' form for player to try challenge other levels.
 - Main Menu button
   - This will open 'Main Menu' form.
   
