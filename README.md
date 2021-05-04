@@ -1,6 +1,5 @@
 # Math Mania Game (MMG) GUI 
 
-**COMP603 : Program Design & Construction  (Project 2)** <br/>
 -JAVA Graphical User Interface (GUI) version<br/>
 -Include database component (Apache Derby DB) to the product<br/>
 -Implement design patterns (Model View Controller)<br/>
